@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Círculo de Quintas - Musicala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Fondo animado */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #16222A, #3A6073);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Animación de ondas */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500%;
+            height: 500%;
+            background: url('https://static.wixstatic.com/media/85afce_c73f9d313a1742769d54475422f4e2de~mv2.png') repeat-x;
+            opacity: 0.1;
+            animation: wave 8s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+            text-align: justify;
+            padding: 0 20px;
+        }
+
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-width: 90px;
+        }
+
+        /* Imagen del Círculo de Quintas */
+        .circle-image {
+            max-width: 90%;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Lista con iconos */
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        ul li {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px;
+            margin: 8px auto;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        ul li:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.02);
+        }
+
+        ul li::before {
+            content: "🎵";
+            margin-right: 10px;
+        }
+
+        /* Botón interactivo */
+        .random-button {
+            margin-top: 20px;
+            padding: 14px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #ff8c00, #ff2e63);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .random-button:hover {
+            background: linear-gradient(135deg, #ff6a00, #e30052);
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 99, 71, 0.7);
+        }
+
+        .random-button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        .random-button:hover::after {
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+
+        /* Resultado de la nota aleatoria */
+        #random-note {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffeb3b;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Footer */
+        .copyright {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo en la esquina superior izquierda -->
+    <img src="https://static.wixstatic.com/media/85afce_3adb3865c88a492b93a8bf2dc69049c3~mv2.png" alt="Logo Musicala" class="logo">
+
+    <div class="container">
+        <h1>🎼 El Círculo de Quintas 🎵</h1>
+
+        <p>El <strong>Círculo de Quintas</strong> es una herramienta clave en la teoría musical. Muestra la relación entre las tonalidades y es esencial para entender armonía, escalas y composición.</p>
+
+        <img src="https://static.wixstatic.com/media/85afce_442491956d104ee2bb0012275e6b7138~mv2.png" alt="Círculo de Quintas" class="circle-image">
+
+        <h2>🎶 Usos del Círculo de Quintas 🎶</h2>
+        <ul>
+            <li>Identificar tonalidades mayores y menores relacionadas.</li>
+            <li>Comprender progresiones armónicas.</li>
+            <li>Facilitar la composición e improvisación.</li>
+            <li>Determinar cuántos sostenidos o bemoles tiene una tonalidad.</li>
+        </ul>
+
+        <button class="random-button" onclick="chooseRandomNote()">🎲 Seleccionar Nota</button>
+
+        <p id="random-note"></p>
+    </div>
+
+    <p class="copyright">© 2025 Musicala. Todos los derechos reservados.</p>
+
+    <script>
+        function chooseRandomNote() {
+            const notes = ["Do", "Sol", "Re", "La", "Mi", "Si", "Fa#", "Do#", "Lab", "Mib", "Sib", "Fa"];
+            const randomIndex = Math.floor(Math.random() * notes.length);
+            const noteElement = document.getElementById("random-note");
+            noteElement.innerText = "🎶 Nota seleccionada: " + notes[randomIndex] + " 🎵";
+            noteElement.classList.add("show");
+        }
+    </script>
+</body>
+</html>
